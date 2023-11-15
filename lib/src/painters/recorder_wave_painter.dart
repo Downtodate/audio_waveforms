@@ -37,7 +37,6 @@ class RecorderWavePainter extends CustomPainter {
   final double updateFrequecy;
   final Paint _wavePaint;
   final Paint _linePaint;
-  final Paint _durationLinePaint;
   final TextStyle durationStyle;
   final Color durationLinesColor;
   final double durationTextPadding;
@@ -88,10 +87,7 @@ class RecorderWavePainter extends CustomPainter {
           ..strokeCap = waveCap,
         _linePaint = Paint()
           ..color = middleLineColor
-          ..strokeWidth = middleLineThickness,
-        _durationLinePaint = Paint()
-          ..strokeWidth = 3
-          ..color = durationLinesColor;
+          ..strokeWidth = middleLineThickness;
   var _labelPadding = 0.0;
 
   final List<Label> _labels = [];
@@ -160,12 +156,6 @@ class RecorderWavePainter extends CustomPainter {
   }
 
   void _addLabel(Canvas canvas, int i, Size size) {
-    canvas.drawLine(
-        Offset(
-            _labelPadding + dragOffset.dx - totalBackDistance.dx, size.height),
-        Offset(_labelPadding + dragOffset.dx - totalBackDistance.dx,
-            size.height + durationLinesHeight),
-        _durationLinePaint);
     _labels.add(
       Label(
         content: showHourInDuration
