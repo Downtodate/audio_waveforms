@@ -38,9 +38,7 @@ class RecorderWavePainter extends CustomPainter {
   final Paint _wavePaint;
   final Paint _linePaint;
   final TextStyle durationStyle;
-  final Color durationLinesColor;
   final double durationTextPadding;
-  final double durationLinesHeight;
   final double labelSpacing;
   final Shader? gradient;
   final bool shouldClearLabels;
@@ -71,9 +69,7 @@ class RecorderWavePainter extends CustomPainter {
     required this.showHourInDuration,
     required this.showDurationLabel,
     required this.durationStyle,
-    required this.durationLinesColor,
     required this.durationTextPadding,
-    required this.durationLinesHeight,
     required this.labelSpacing,
     required this.gradient,
     required this.shouldClearLabels,
