@@ -35,7 +35,7 @@ class AudioPlayer(
         if (path != null) {
             updateFrequency = frequency
             val uri = Uri.parse(path)
-            val mediaItem = MediaItem.fromUri(uri)
+            val mediaItem = MediaItem.fromUri("file://"+uri)
             player = ExoPlayer.Builder(appContext).build()
             player?.addMediaItem(mediaItem)
             player?.prepare()
